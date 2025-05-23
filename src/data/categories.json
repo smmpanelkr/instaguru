@@ -5,6 +5,26 @@
     "description": "Explore photos and videos.",
     "color": "pink",
     "logo": "/ic/insta.jpeg",
+    "label": "Enter Your Instagram Profile Link",
+    "placeholder": "https://instagram.com/yourprofile",
+    "filters": {
+      "Followers": {
+        "label": "Enter Your Instagram Profile Link",
+        "placeholder": "https://instagram.com/yourprofile"
+      },
+      "Likes": {
+        "label": "Enter Your Instagram Post Link",
+        "placeholder": "https://instagram.com/p/yourpost"
+      },
+      "Comments": {
+        "label": "Enter Your Instagram Post Link",
+        "placeholder": "https://instagram.com/p/yourpost"
+      },
+      "Views": {
+        "label": "Enter Your Instagram Story/Post Link",
+        "placeholder": "https://instagram.com/stories/yourprofile"
+      }
+    },
     "packs": [
       {
         "id": 114,
@@ -42,6 +62,26 @@
     "description": "Best video content daily.",
     "color": "red",
     "logo": "/ic/youtube.png",
+    "label": "Enter Your YouTube Channel Link",
+    "placeholder": "https://youtube.com/@yourchannel",
+    "filters": {
+      "Followers": {
+        "label": "Enter Your YouTube Channel Link",
+        "placeholder": "https://youtube.com/@yourchannel"
+      },
+      "Views": {
+        "label": "Enter Your YouTube Video Link",
+        "placeholder": "https://youtube.com/watch?v=yourvideo"
+      },
+      "Likes": {
+        "label": "Enter Your YouTube Video Link",
+        "placeholder": "https://youtube.com/watch?v=yourvideo"
+      },
+      "Comments": {
+        "label": "Enter Your YouTube Video Link",
+        "placeholder": "https://youtube.com/watch?v=yourvideo"
+      }
+    },
     "packs": [
       {
         "id": 100,
@@ -79,6 +119,26 @@
     "description": "Connect with friends and family.",
     "color": "blue",
     "logo": "/ic/facebook.webp",
+    "label": "Enter Your Facebook Profile/Page Link",
+    "placeholder": "https://facebook.com/yourprofile",
+    "filters": {
+      "Followers": {
+        "label": "Enter Your Facebook Profile/Page Link",
+        "placeholder": "https://facebook.com/yourprofile"
+      },
+      "Likes": {
+        "label": "Enter Your Facebook Post Link",
+        "placeholder": "https://facebook.com/yourprofile/posts/123"
+      },
+      "Comments": {
+        "label": "Enter Your Facebook Post Link",
+        "placeholder": "https://facebook.com/yourprofile/posts/123"
+      },
+      "Views": {
+        "label": "Enter Your Facebook Video/Post Link",
+        "placeholder": "https://facebook.com/yourprofile/videos/123"
+      }
+    },
     "packs": [
       {
         "id": 110,
@@ -116,6 +176,14 @@
     "description": "Watch your favorite",
     "color": "red",
     "logo": "/ic/netflix.svg",
+    "label": "Enter Your Netflix Profile Link",
+    "placeholder": "https://netflix.com/yourprofile",
+    "filters": {
+      "Views": {
+        "label": "Enter Your Netflix Content Link",
+        "placeholder": "https://netflix.com/watch/yourcontent"
+      }
+    },
     "packs": [
       {
         "id": 106,
@@ -139,6 +207,18 @@
     "description": "Shop and stream.",
     "color": "blue",
     "logo": "/ic/prime.png",
+    "label": "Enter Your Amazon Prime Channel Link",
+    "placeholder": "https://amazon.com/prime/yourchannel",
+    "filters": {
+      "Followers": {
+        "label": "Enter Your Amazon Prime Channel Link",
+        "placeholder": "https://amazon.com/prime/yourchannel"
+      },
+      "Views": {
+        "label": "Enter Your Amazon Prime Video Link",
+        "placeholder": "https://amazon.com/prime/watch/yourvideo"
+      }
+    },
     "packs": [
       {
         "id": 118,
@@ -162,6 +242,18 @@
     "description": "Listen to music and podcasts.",
     "color": "green",
     "logo": "/ic/spotify.png",
+    "label": "Enter Your Spotify Profile Link",
+    "placeholder": "https://spotify.com/user/yourprofile",
+    "filters": {
+      "Followers": {
+        "label": "Enter Your Spotify Playlist Link",
+        "placeholder": "https://spotify.com/playlist/yourplaylist"
+      },
+      "Views": {
+        "label": "Enter Your Spotify Track/Podcast Link",
+        "placeholder": "https://spotify.com/track/yourtrack"
+      }
+    },
     "packs": [
       {
         "id": 104,
@@ -185,6 +277,18 @@
     "description": "Secure messaging app.",
     "color": "sky",
     "logo": "/ic/telegram.webp",
+    "label": "Enter Your Telegram Group/Channel Link",
+    "placeholder": "https://t.me/yourgroup",
+    "filters": {
+      "Followers": {
+        "label": "Enter Your Telegram Group/Channel Link",
+        "placeholder": "https://t.me/yourgroup"
+      },
+      "Views": {
+        "label": "Enter Your Telegram Post Link",
+        "placeholder": "https://t.me/yourgroup/123"
+      }
+    },
     "packs": [
       {
         "id": 108,

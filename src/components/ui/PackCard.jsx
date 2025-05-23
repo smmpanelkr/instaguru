@@ -3,7 +3,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import COLOR_VARIANTS from "../../utils/colorVariants";
 import { Link } from "react-router-dom";
 
-const PackCard = ({ color = "red", title, description, price, link }) => {
+const PackCard = ({ color = "red", title, description, price,link }) => {
   const variant = COLOR_VARIANTS[color] || COLOR_VARIANTS.red;
 
   return (

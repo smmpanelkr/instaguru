@@ -64,7 +64,7 @@ const Products = () => {
                 title={pack.title}
                 description={pack.description}
                 price={pack.price}
-                link={selectedItem.link}
+                link={`/purchase/${pack.id}`}
                 logo={selectedItem.logo}
               />
             ))
