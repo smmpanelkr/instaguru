@@ -1,0 +1,205 @@
+[
+  {
+    "slug": "instagram",
+    "name": "Instagram",
+    "description": "Explore photos and videos.",
+    "color": "pink",
+    "logo": "/ic/insta.jpeg",
+    "packs": [
+      {
+        "id": 114,
+        "title": "Instagram Followers Growth",
+        "price": 59,
+        "description": "Grow your follower base organically.",
+        "filter": "Followers"
+      },
+      {
+        "id": 115,
+        "title": "Instagram Likes Booster",
+        "price": 25,
+        "description": "Increase likes on your photos and videos.",
+        "filter": "Likes"
+      },
+      {
+        "id": 116,
+        "title": "Instagram Comments Plan",
+        "price": 35,
+        "description": "Get more comments to boost engagement.",
+        "filter": "Comments"
+      },
+      {
+        "id": 117,
+        "title": "Instagram Story Views",
+        "price": 19,
+        "description": "Boost views on your Instagram stories.",
+        "filter": "Views"
+      }
+    ]
+  },
+  {
+    "slug": "youtube",
+    "name": "YouTube",
+    "description": "Best video content daily.",
+    "color": "red",
+    "logo": "/ic/youtube.png",
+    "packs": [
+      {
+        "id": 100,
+        "title": "YouTube Subscribers Boost",
+        "price": 99,
+        "description": "Increase your channel subscribers quickly.",
+        "filter": "Followers"
+      },
+      {
+        "id": 101,
+        "title": "YouTube Views Package",
+        "price": 49,
+        "description": "Boost views on your videos for better reach.",
+        "filter": "Views"
+      },
+      {
+        "id": 102,
+        "title": "YouTube Likes Plan",
+        "price": 29,
+        "description": "Get more likes on your videos.",
+        "filter": "Likes"
+      },
+      {
+        "id": 103,
+        "title": "YouTube Comments Boost",
+        "price": 39,
+        "description": "Increase comments to enhance engagement.",
+        "filter": "Comments"
+      }
+    ]
+  },
+  {
+    "slug": "facebook",
+    "name": "Facebook",
+    "description": "Connect with friends and family.",
+    "color": "blue",
+    "logo": "/ic/facebook.webp",
+    "packs": [
+      {
+        "id": 110,
+        "title": "Facebook Followers Boost",
+        "price": 49,
+        "description": "Increase your page followers quickly.",
+        "filter": "Followers"
+      },
+      {
+        "id": 111,
+        "title": "Facebook Likes Package",
+        "price": 29,
+        "description": "Boost likes on your posts for better engagement.",
+        "filter": "Likes"
+      },
+      {
+        "id": 112,
+        "title": "Facebook Comments Plan",
+        "price": 39,
+        "description": "Get more comments to enhance interaction.",
+        "filter": "Comments"
+      },
+      {
+        "id": 113,
+        "title": "Facebook Views Boost",
+        "price": 19,
+        "description": "Increase views on your videos and posts.",
+        "filter": "Views"
+      }
+    ]
+  },
+  {
+    "slug": "netflix",
+    "name": "Netflix",
+    "description": "Watch your favorite",
+    "color": "red",
+    "logo": "/ic/netflix.svg",
+    "packs": [
+      {
+        "id": 106,
+        "title": "Netflix Profile Views",
+        "price": 99,
+        "description": "Boost visibility for shared profiles.",
+        "filter": "Views"
+      },
+      {
+        "id": 107,
+        "title": "Netflix Watch Hours",
+        "price": 149,
+        "description": "Increase watch hours for trending content.",
+        "filter": "Views"
+      }
+    ]
+  },
+  {
+    "slug": "amazon-prime",
+    "name": "Amazon Prime",
+    "description": "Shop and stream.",
+    "color": "blue",
+    "logo": "/ic/prime.png",
+    "packs": [
+      {
+        "id": 118,
+        "title": "Amazon Prime Video Views",
+        "price": 99,
+        "description": "Increase views on Prime Video content.",
+        "filter": "Views"
+      },
+      {
+        "id": 119,
+        "title": "Amazon Prime Channel Followers",
+        "price": 129,
+        "description": "Boost followers for Prime channels.",
+        "filter": "Followers"
+      }
+    ]
+  },
+  {
+    "slug": "spotify",
+    "name": "Spotify",
+    "description": "Listen to music and podcasts.",
+    "color": "green",
+    "logo": "/ic/spotify.png",
+    "packs": [
+      {
+        "id": 104,
+        "title": "Spotify Playlist Followers",
+        "price": 59,
+        "description": "Boost followers for your playlists.",
+        "filter": "Followers"
+      },
+      {
+        "id": 105,
+        "title": "Spotify Track Plays",
+        "price": 39,
+        "description": "Increase plays on your tracks or podcasts.",
+        "filter": "Views"
+      }
+    ]
+  },
+  {
+    "slug": "telegram",
+    "name": "Telegram",
+    "description": "Secure messaging app.",
+    "color": "sky",
+    "logo": "/ic/telegram.webp",
+    "packs": [
+      {
+        "id": 108,
+        "title": "Telegram Group Members",
+        "price": 79,
+        "description": "Add members to your Telegram groups or channels.",
+        "filter": "Followers"
+      },
+      {
+        "id": 109,
+        "title": "Telegram Message Views",
+        "price": 29,
+        "description": "Increase views on your channel posts.",
+        "filter": "Views"
+      }
+    ]
+  }
+]

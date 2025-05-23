@@ -1,0 +1,31 @@
+import Header from "../components/Header";
+import AutoSlider from "../components/AutoSlider";
+import ItemCard from "../components/ui/ItemCard";
+import channels from "../data/categories.json"; // Import the JSON data
+
+const Home = () => {
+  return (
+    <>
+      <Header />
+      <div className="mt-20"></div>
+
+      <AutoSlider />
+      <div className="text-center mt-6 ">
+        <p className="text-lg font-semibold mt-4 mb-2 gradient-text">
+          Explore our services and their plans.
+        </p>
+      </div>
+
+      {channels.map((channel, index) => (
+        <ItemCard key={index} {...channel} />
+      ))}
+      <div className="my-5">
+        <p className="text-center text-sm text-gray-500">
+          &copy; 2025 All rights reserved.
+        </p>
+      </div>
+    </>
+  );
+};
+
+export default Home;
