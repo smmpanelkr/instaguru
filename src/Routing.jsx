@@ -4,7 +4,7 @@ import About from "./pages/About";
 import Purchase from "./pages/Purchase";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
-import ScrollToTop from "./components/ScrollToTop"; // make sure the path is correct
+import ScrollToTop from "./components/ui/ScrollToTop"; // make sure the path is correct
 
 const Routing = () => {
   return (
