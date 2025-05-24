@@ -17,23 +17,9 @@ const Home = () => {
         </p>
       </div>
 
-<<<<<<< HEAD
       {channels.map((channel, index) => (
         <ItemCard key={index} {...channel} />
       ))}
-=======
-      <div>
-        {channels.map((channel, index) => (
-          <Suspense 
-            key={index}
-            fallback={<SkeletonLoader type="card" />}
-          >
-            <ItemCard {...channel} />
-          </Suspense>
-        ))}
-      </div>
-      
->>>>>>> d8160f7f37d4410b67a0e60c9877e260609433a1
       <div className="my-5">
         <p className="text-center text-sm text-gray-500">
           &copy; 2025 All rights reserved.
