@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const mobileBanners = [
   {
@@ -23,22 +25,34 @@ const mobileBanners = [
 ];
 
 const AutoSlider = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className="w-full max-w-[calc(100vw-2rem)] mx-auto mt-6">
+      {isLoading && (
+        <div className="animate-pulse">
+          <div className="w-full h-48 bg-gray-200 rounded-xl"></div>
+        </div>
+      )}
       <Swiper
         spaceBetween={20}
         pagination={{ clickable: true }}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
         modules={[Pagination, Autoplay]}
-        className="rounded-xl overflow-hidden"
+        className={`rounded-xl overflow-hidden ${isLoading ? 'hidden' : ''}`}
+        onImagesReady={() => setIsLoading(false)}
       >
         {mobileBanners.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <img
+            <LazyLoadImage
               src={banner.src}
               alt={banner.alt}
-              className="w-full  object-cover rounded-xl"
+              effect="blur"
+              className="w-full object-cover rounded-xl"
+              loading="lazy"
+              width="100%"
+              height="auto"
             />
           </SwiperSlide>
         ))}
@@ -46,5 +60,3 @@ const AutoSlider = () => {
     </div>
   );
 };
-
-export default AutoSlider;

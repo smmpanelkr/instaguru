@@ -50,8 +50,19 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@heroicons/react', 'lucide-react']
+          ui: ['@heroicons/react', 'lucide-react'],
+          swiper: ['swiper'],
+          lazyload: ['react-lazy-load-image-component']
         }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+    cssCodeSplit: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
       }
     }
   }
