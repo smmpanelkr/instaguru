@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faLink, faCommentSms, faCheck, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLink,
+  faCommentSms,
+  faCheck,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 
@@ -43,7 +48,11 @@ const Refer = () => {
   }, [referralId, navigate]);
 
   const referralLink = `${window.location.origin}/refer/${referralCode}`;
-  const shareMessage = `Join using my referral link and earn rewards! ${referralLink}`;
+  const shareMessage = `🔥 Get real followers, subscribers & OTT subscriptions at the lowest prices!
+
+🎁 Use my referral link to join Instaguru and get ₹10 bonus instantly! 🤑  
+👇 Click now and grab the deal:
+${referralLink}`;
 
   const handleCopy = async () => {
     try {
@@ -118,9 +127,14 @@ const Refer = () => {
           {/* Referral Count Section */}
           <div className="mt-6 border-t border-gray-200 pt-4">
             <div className="flex items-center justify-center gap-2">
-              <FontAwesomeIcon icon={faUsers} size="lg" className="text-green-600" />
+              <FontAwesomeIcon
+                icon={faUsers}
+                size="lg"
+                className="text-green-600"
+              />
               <p className="text-sm text-gray-700">
-                Your Referrals: <span className="font-semibold">{referralCount}</span>
+                Your Referrals:{" "}
+                <span className="font-semibold">{referralCount}</span>
               </p>
             </div>
           </div>
