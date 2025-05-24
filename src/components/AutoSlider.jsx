@@ -28,7 +28,7 @@ const AutoSlider = () => {
   const [loadedImages, setLoadedImages] = useState({});
 
   const handleImageLoad = (id) => {
-    setLoadedImages(prev => ({ ...prev, [id]: true }));
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
@@ -45,14 +45,13 @@ const AutoSlider = () => {
           <SwiperSlide key={banner.id}>
             <div className="relative">
               {!loadedImages[banner.id] && (
-                <Skeleton className="absolute inset-0 w-full h-[200px]" />
+                <Skeleton className="absolute inset-0 w-full aspect-[2000/734]" />
               )}
               <LazyLoadImage
                 src={banner.src}
                 alt={banner.alt}
-                className="w-full object-cover rounded-xl"
+                className="w-full object-cover rounded-xl aspect-[2000/734]"
                 afterLoad={() => handleImageLoad(banner.id)}
-                style={{ minHeight: '200px' }}
               />
             </div>
           </SwiperSlide>
