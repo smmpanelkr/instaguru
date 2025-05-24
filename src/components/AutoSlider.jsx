@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Autoplay } from "swiper/modules";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import Skeleton from "./ui/Skeleton";
 
 const mobileBanners = [
   {
@@ -23,6 +25,12 @@ const mobileBanners = [
 ];
 
 const AutoSlider = () => {
+  const [loadedImages, setLoadedImages] = useState({});
+
+  const handleImageLoad = (id) => {
+    setLoadedImages(prev => ({ ...prev, [id]: true }));
+  };
+
   return (
     <div className="w-full max-w-[calc(100vw-2rem)] mx-auto mt-6">
       <Swiper
@@ -35,11 +43,18 @@ const AutoSlider = () => {
       >
         {mobileBanners.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <img
-              src={banner.src}
-              alt={banner.alt}
-              className="w-full  object-cover rounded-xl"
-            />
+            <div className="relative">
+              {!loadedImages[banner.id] && (
+                <Skeleton className="absolute inset-0 w-full h-[200px]" />
+              )}
+              <LazyLoadImage
+                src={banner.src}
+                alt={banner.alt}
+                className="w-full object-cover rounded-xl"
+                afterLoad={() => handleImageLoad(banner.id)}
+                style={{ minHeight: '200px' }}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
