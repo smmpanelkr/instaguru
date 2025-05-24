@@ -1,10 +1,58 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import { VitePWA } from 'vite-plugin-pwa'
+import imagemin from 'vite-plugin-imagemin'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'InstaGuru',
+        short_name: 'InstaGuru',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/ic/instawalla-logo.svg',
+            sizes: '192x192',
+            type: 'image/svg+xml'
+          }
+        ]
+      }
+    }),
+    imagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false
+      },
+      optipng: {
+        optimizationLevel: 7
+      },
+      mozjpeg: {
+        quality: 60
+      },
+      pngquant: {
+        quality: [0.7, 0.8],
+        speed: 4
+      },
+      webp: {
+        quality: 70
+      }
+    })
+  ],
   server: {
-    host: true, // or '0.0.0.0'
+    host: true
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@heroicons/react', 'lucide-react']
+        }
+      }
+    }
+  }
 })
