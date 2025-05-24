@@ -9,8 +9,9 @@ const ItemCard = ({ logo, name, description, slug, color = "red" }) => {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div
-      className={`flex items-center ${variant.cardBg} m-4 h-20 rounded-lg p-4`}
+    <Link
+      to={slug}
+      className={`flex items-center ${variant.cardBg} m-4 h-20 rounded-lg p-4 transition hover:brightness-95 no-underline`}
     >
       {imgError || !logo ? (
         <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
@@ -29,14 +30,14 @@ const ItemCard = ({ logo, name, description, slug, color = "red" }) => {
         <h3 className="text-sm font-semibold text-gray-800">{name}</h3>
         <p className="text-xs text-gray-600 mt-1 truncate">{description}</p>
       </div>
-      <Link
-        to={slug}
+
+      <div
         className={`ml-auto text-white text-sm px-4 py-2 rounded-full flex items-center gap-1 ${variant.buttonBg} ${variant.buttonHover}`}
       >
         Plans
         <ArrowRightIcon className="w-4 h-4" />
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

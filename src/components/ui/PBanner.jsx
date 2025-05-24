@@ -5,7 +5,7 @@ const PBanner = ({ imageSrc, altText, title, description, color = "red" }) => {
   const variant = COLOR_VARIANTS[color] || COLOR_VARIANTS.red;
 
   return (
-    <div className={`${variant.cardBg} h-[120px] rounded-lg flex items-center px-6`}>
+    <div className={`${variant.cardBg} h-[120px] flex items-center px-6`}>
       <div className="flex-shrink-0 flex items-center">
         <img
           src={imageSrc}

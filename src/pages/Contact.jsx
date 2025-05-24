@@ -1,125 +1,73 @@
-import React, { useState, useEffect } from "react";
-import { CheckCircle, XCircle, Loader2, Clock } from "lucide-react";
+import React from "react";
+import Header from "../components/Header";
+import { Mail, Smartphone, Clock } from "lucide-react";
 
-const PaymentStatus = () => {
-  // Example internal states (replace or update as needed)
-  const [paymentState, setPaymentState] = useState("WAITING"); // WAITING, PROCESSING, SUCCESS, FAILED
-  const [timeRemaining, setTimeRemaining] = useState(300); // seconds
+const Contact = () => {
+  return (
+    <div>
+      <Header />
+      <main className="container mt-12 mx-auto px-4 py-8">
+        <section className="text-center mb-8">
+          <h1 className="text-xl font-bold text-gray-800 mb-2">Contact Us</h1>
+          <p className="text-sm text-gray-600">
+            We're here for you 24/7 via email or WhatsApp.
+          </p>
+        </section>
 
-  // Format timeRemaining as mm:ss
-  const formatTime = (seconds) => {
-    const m = Math.floor(seconds / 60)
-      .toString()
-      .padStart(2, "0");
-    const s = (seconds % 60).toString().padStart(2, "0");
-    return `${m}:${s}`;
-  };
-
-  const formattedTime = formatTime(timeRemaining);
-
-  // Example timer countdown for demo, reduces timeRemaining by 1 every second if WAITING
-  useEffect(() => {
-    if (paymentState === "WAITING" && timeRemaining > 0) {
-      const timer = setTimeout(() => setTimeRemaining(timeRemaining - 1), 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [paymentState, timeRemaining]);
-
-  // Calculate time percentage for circular progress (assuming max 300 seconds)
-  const timePercentage = (timeRemaining / 300) * 100;
-
-  const renderStatusContent = () => {
-    switch (paymentState) {
-      case "WAITING":
-        return (
-          <div className="flex flex-col items-center">
-            <div className="relative w-16 h-16 mb-2">
-              <svg className="w-full h-full" viewBox="0 0 36 36">
-                <path
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                  fill="none"
-                  stroke="#E5E7EB"
-                  strokeWidth="2"
-                  strokeDasharray="100, 100"
-                />
-                <path
-                  d="M18 2.0845
-                    a 15.9155 15.9155 0 0 1 0 31.831
-                    a 15.9155 15.9155 0 0 1 0 -31.831"
-                  fill="none"
-                  stroke="#0066CC"
-                  strokeWidth="2"
-                  strokeDasharray={`${timePercentage}, 100`}
-                  className="transition-all duration-1000 ease-in-out"
-                />
-              </svg>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Clock className="w-6 h-6 text-blue-600" />
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="text-sm font-medium text-gray-700">Waiting for payment</p>
-              <p className="text-xs text-gray-500 mt-1">Time remaining: {formattedTime}</p>
-            </div>
-          </div>
-        );
-
-      case "PROCESSING":
-        return (
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 mb-2 flex items-center justify-center">
-              <Loader2 className="w-10 h-10 text-yellow-500 animate-spin" />
-            </div>
-            <div className="text-center">
-              <p className="text-sm font-medium text-yellow-600">Processing payment</p>
-              <p className="text-xs text-gray-500 mt-1">Please wait while we verify your payment</p>
-            </div>
-          </div>
-        );
-
-      case "SUCCESS":
-        return (
-          <div className="flex flex-col items-center animate-fadeIn">
-            <div className="w-16 h-16 mb-2 flex items-center justify-center">
-              <CheckCircle className="w-12 h-12 text-green-500" />
-            </div>
-            <div className="text-center">
-              <p className="text-lg font-semibold text-green-600">Payment Successful!</p>
-              <p className="text-sm text-gray-600 mt-1">Your transaction has been completed</p>
-              <p className="text-xs text-gray-500 mt-3">
-                Transaction ID: RZP{Date.now().toString().substring(5)}
-              </p>
-            </div>
-          </div>
-        );
-
-      case "FAILED":
-        return (
-          <div className="flex flex-col items-center animate-fadeIn">
-            <div className="w-16 h-16 mb-2 flex items-center justify-center">
-              <XCircle className="w-12 h-12 text-red-500" />
-            </div>
-            <div className="text-center">
-              <p className="text-lg font-semibold text-red-600">Payment Failed</p>
-              <p className="text-sm text-gray-600 mt-1">Your transaction could not be completed</p>
-              <button
-                onClick={() => setPaymentState("WAITING")}
-                className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md text-sm hover:bg-blue-700 transition-colors"
+        <section className="flex flex-col md:flex-row items-center justify-center gap-4">
+          {/* Email */}
+          <div className="bg-green-50 px-4 py-3 rounded-lg  flex items-center gap-3 w-full md:w-auto">
+            <Mail className="w-5 h-5 text-green-600" />
+            <div className="text-left text-sm">
+              <p className="font-semibold text-gray-800">Email</p>
+              <a
+                href="mailto:help@instaguru.in"
+                className="text-green-600 hover:underline"
               >
-                Try Again
-              </button>
+                help@instaguru.in
+              </a>
             </div>
           </div>
-        );
 
-      default:
-        return null;
-    }
-  };
+          {/* WhatsApp */}
+          <div className="bg-green-50 px-4 py-3 rounded-lg  flex items-center gap-3 w-full md:w-auto">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="100"
+              height="100"
+              viewBox="0 0 24 24"
+              fill="#16A34A"
+              className="h-5 w-5"
+            >
+              <path d="M 12 2 C 6.5 2 2 6.5 2 12 C 2 13.8 2.5007813 15.5 3.3007812 17 L 2 22 L 7.1992188 20.800781 C 8.6992188 21.600781 10.3 22 12 22 C 17.5 22 22 17.5 22 12 C 22 9.3 20.999609 6.8003906 19.099609 4.9003906 C 17.199609 3.0003906 14.7 2 12 2 z M 12 4 C 14.1 4 16.099219 4.8007813 17.699219 6.3007812 C 19.199219 7.9007813 20 9.9 20 12 C 20 16.4 16.4 20 12 20 C 10.7 20 9.2992188 19.7 8.1992188 19 L 7.5 18.599609 L 6.8007812 18.800781 L 4.8007812 19.300781 L 5.3007812 17.5 L 5.5 16.699219 L 5.0996094 16 C 4.3996094 14.8 4 13.4 4 12 C 4 7.6 7.6 4 12 4 z M 8.5 7.4003906 C 8.3 7.4003906 8.0007812 7.3992188 7.8007812 7.6992188 C 7.5007813 7.9992188 6.9003906 8.6007813 6.9003906 9.8007812 C 6.9003906 11.000781 7.8003906 12.200391 7.9003906 12.400391 C 8.1003906 12.600391 9.6992188 15.199219 12.199219 16.199219 C 14.299219 16.999219 14.699219 16.800781 15.199219 16.800781 C 15.699219 16.700781 16.700391 16.199609 16.900391 15.599609 C 17.100391 14.999609 17.099219 14.499219 17.199219 14.199219 C 17.099219 14.099219 16.999219 14.000391 16.699219 13.900391 C 16.499219 13.800391 15.3 13.199609 15 13.099609 C 14.7 12.999609 14.600391 12.899219 14.400391 13.199219 C 14.200391 13.499219 13.699609 13.999219 13.599609 14.199219 C 13.499609 14.399219 13.399609 14.400781 13.099609 14.300781 C 12.899609 14.200781 12.099609 13.999609 11.099609 13.099609 C 10.299609 12.499609 9.7992187 11.700391 9.6992188 11.400391 C 9.4992187 11.200391 9.7007813 11.000391 9.8007812 10.900391 L 10.199219 10.5 C 10.299219 10.4 10.300391 10.199609 10.400391 10.099609 C 10.500391 9.9996094 10.500391 9.8992188 10.400391 9.6992188 C 10.300391 9.4992187 9.7996094 8.3007812 9.5996094 7.8007812 C 9.3996094 7.4007812 9.2 7.4003906 9 7.4003906 L 8.5 7.4003906 z"></path>
+            </svg>
+            <div className="text-left text-sm">
+              <p className="font-semibold text-gray-800">WhatsApp</p>
+              <a
+                href="https://wa.me/918210220189"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 hover:underline"
+              >
+                +91 82102 20189
+              </a>
+            </div>
+          </div>
 
-  return <div className="py-4 flex justify-center">{renderStatusContent()}</div>;
+          {/* 24/7 Support */}
+          <div className="bg-green-50 px-4 py-3 rounded-lg  flex items-center gap-3 w-full md:w-auto">
+            <Clock className="w-5 h-5 text-green-600" />
+            <div className="text-left text-sm">
+              <p className="font-semibold text-gray-800">Support</p>
+              <p className="text-gray-600">24/7 Available</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
 };
 
-export default PaymentStatus;
+export default Contact;

@@ -11,6 +11,17 @@ const WelcomePopup = () => {
     if (!hasVisited) {
       setIsOpen(true);
       localStorage.setItem("hasVisited", "true");
+      
+      // Save welcome bonus transaction
+      const welcomeBonus = {
+        id: "welcome_bonus",
+        type: "credit",
+        amount: 10,
+        date: new Date().toISOString(), // Save full ISO date-time
+        description: "Welcome Bonus",
+      };
+      localStorage.setItem("welcomeBonusTxn", JSON.stringify(welcomeBonus));
+
       triggerConfetti();
     }
   }, []);

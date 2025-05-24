@@ -117,7 +117,7 @@ export default function PaymentForm() {
 
         <button
           type="submit"
-          className={`w-full bg-green-600 text-white font-semibold py-2 rounded-md hover:bg-green-700 transition ${
+          className={`w-full bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 transition ${
             isLoading ? "opacity-70 cursor-not-allowed" : ""
           }`}
           disabled={isLoading}

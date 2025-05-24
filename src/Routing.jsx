@@ -7,12 +7,15 @@ import Products from "./pages/Products";
 import ScrollToTop from "./components/ui/ScrollToTop"; // make sure the path is correct
 import AddFunds from "./pages/AddFunds";
 import Payment from "./pages/Payment";
+import Wallet from "./pages/Wallet";
+import ReferPage from "./pages/Refer";
 
 const Routing = () => {
   return (
     <Router>
       <ScrollToTop />
       <Routes>
+        <Route path="/refer" element={<ReferPage />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/purchase/:id" element={<Purchase />} />
@@ -20,6 +23,8 @@ const Routing = () => {
         <Route path="/:slug" element={<Products />} />
         <Route path="/addfund" element={<AddFunds />} />
         <Route path="/pay/:amount" element={<Payment />} />
+        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/refer/:referralId" element={<ReferPage />} />
       </Routes>
     </Router>
   );

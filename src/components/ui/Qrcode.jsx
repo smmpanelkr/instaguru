@@ -33,7 +33,7 @@ export default function Qrcode() {
   };
 
   const handleCancel = () => {
-    navigate("/addfund");
+    navigate("/wallet");
   };
 
   if (amountError || !validatedAmount) {
