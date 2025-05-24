@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CheckCircle, XCircle, Loader2, Clock } from "lucide-react";
 
-const PaymentStatus = () => {
+const Timer = () => {
   // Example internal states (replace or update as needed)
   const [paymentState, setPaymentState] = useState("WAITING"); // WAITING, PROCESSING, SUCCESS, FAILED
   const [timeRemaining, setTimeRemaining] = useState(300); // seconds
@@ -33,7 +33,7 @@ const PaymentStatus = () => {
       case "WAITING":
         return (
           <div className="flex flex-col items-center">
-            <div className="relative w-16 h-16 mb-2">
+            <div className="relative w-14 h-14 mb-2">
               <svg className="w-full h-full" viewBox="0 0 36 36">
                 <path
                   d="M18 2.0845
@@ -122,4 +122,4 @@ const PaymentStatus = () => {
   return <div className="py-4 flex justify-center">{renderStatusContent()}</div>;
 };
 
-export default PaymentStatus;
+export default Timer;
