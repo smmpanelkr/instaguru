@@ -7,17 +7,17 @@ import { Pagination, Autoplay } from "swiper/modules";
 const mobileBanners = [
   {
     id: 1,
-    src: "/ic/banner.avif",
+    src: "/banner/banner-1.webp",
     alt: "Banner 1",
   },
   {
     id: 2,
-    src: "/ic/banner.avif",
+    src: "/banner/banner-2.webp",
     alt: "Banner 2",
   },
   {
     id: 3,
-    src: "/ic/banner.avif",
+    src: "/banner/banner-3.webp",
     alt: "Banner 3",
   },
 ];
@@ -38,7 +38,7 @@ const AutoSlider = () => {
             <img
               src={banner.src}
               alt={banner.alt}
-              className="w-full h-[200px] object-cover rounded-xl"
+              className="w-full  object-cover rounded-xl"
             />
           </SwiperSlide>
         ))}
