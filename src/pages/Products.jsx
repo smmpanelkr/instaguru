@@ -39,6 +39,7 @@ const Products = () => {
   return (
     <div>
       <Header />
+      <Header />
       <div className="mt-20">
         <PBanner
           key={selectedItem.slug}
