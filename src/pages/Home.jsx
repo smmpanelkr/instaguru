@@ -22,17 +22,17 @@ const Home = () => {
         </p>
       </div>
 
-      <Suspense 
-        fallback={
-          Array(3).fill().map((_, i) => (
-            <SkeletonLoader key={i} type="card" />
-          ))
-        }
-      >
+      <div>
         {channels.map((channel, index) => (
-          <ItemCard key={index} {...channel} />
+          <Suspense 
+            key={index}
+            fallback={<SkeletonLoader type="card" />}
+          >
+            <ItemCard {...channel} />
+          </Suspense>
         ))}
-      </Suspense>
+      </div>
+      
       <div className="my-5">
         <p className="text-center text-sm text-gray-500">
           &copy; 2025 All rights reserved.
