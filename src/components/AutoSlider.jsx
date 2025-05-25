@@ -11,16 +11,22 @@ const mobileBanners = [
     id: 1,
     src: "/banner/banner-1.webp",
     alt: "Banner 1",
+    width: 1000,
+    height: 367
   },
   {
     id: 2,
     src: "/banner/banner-2.webp",
     alt: "Banner 2",
+    width: 1000,
+    height: 367
   },
   {
     id: 3,
     src: "/banner/banner-3.webp",
     alt: "Banner 3",
+    width: 1000,
+    height: 367
   },
 ];
 
@@ -50,8 +56,12 @@ const AutoSlider = () => {
               <LazyLoadImage
                 src={banner.src}
                 alt={banner.alt}
+                width={banner.width}
+                height={banner.height}
                 className="w-full object-cover rounded-xl aspect-[2000/734]"
                 afterLoad={() => handleImageLoad(banner.id)}
+                loading={banner.id === 1 ? "eager" : "lazy"}
+                fetchpriority={banner.id === 1 ? "high" : "auto"}
               />
             </div>
           </SwiperSlide>

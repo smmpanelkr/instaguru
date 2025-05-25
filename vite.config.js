@@ -39,6 +39,14 @@ export default defineConfig({
       },
       webp: {
         quality: 70
+      },
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: false
+          }
+        ]
       }
     })
   ],
@@ -50,8 +58,18 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['@heroicons/react', 'lucide-react']
+          ui: ['@heroicons/react', 'lucide-react'],
+          icons: ['@fortawesome/fontawesome-svg-core', '@fortawesome/free-brands-svg-icons', '@fortawesome/free-solid-svg-icons', '@fortawesome/react-fontawesome'],
+          utils: ['canvas-confetti', 'react-lazy-load-image-component', 'react-qr-code']
         }
+      }
+    },
+    chunkSizeWarningLimit: 1000,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
       }
     }
   }
