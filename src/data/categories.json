@@ -156,7 +156,7 @@
     "name": "YouTube",
     "description": "Best video content daily.",
     "color": "red",
-    "logo": "/ic/youtube.png",
+    "logo": "/ic/youtube.webp",
     "label": "Enter Your YouTube Channel Link",
     "placeholder": "https://youtube.com/@yourchannel",
     "filters": {
@@ -529,7 +529,7 @@
     "name": "Amazon Prime",
     "description": "Shop and stream.",
     "color": "blue",
-    "logo": "/ic/prime.png",
+    "logo": "/ic/prime.webp",
     "label": "Enter Your Email for Amazon Prime Subscription",
     "placeholder": "email@example.com",
     "filters": {
@@ -574,7 +574,7 @@
     "name": "Spotify",
     "description": "Listen to music and podcasts.",
     "color": "green",
-    "logo": "/ic/spotify.png",
+    "logo": "/ic/spotify.webp",
     "label": "Enter Your Email for Spotify Subscription",
     "placeholder": "email@example.com",
     "filters": {
