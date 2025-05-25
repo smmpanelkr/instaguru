@@ -61,7 +61,7 @@ const AutoSlider = () => {
                 className="w-full object-cover rounded-xl aspect-[2000/734]"
                 afterLoad={() => handleImageLoad(banner.id)}
                 loading={banner.id === 1 ? "eager" : "lazy"}
-                fetchpriority={banner.id === 1 ? "high" : "auto"}
+                fetchPriority={banner.id === 1 ? "high" : "auto"}
               />
             </div>
           </SwiperSlide>
