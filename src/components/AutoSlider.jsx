@@ -49,19 +49,20 @@ const AutoSlider = () => {
       >
         {mobileBanners.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="relative">
+            <div className="relative w-full aspect-[2000/734]">
               {!loadedImages[banner.id] && (
-                <Skeleton className="absolute inset-0 w-full aspect-[2000/734]" />
+                <Skeleton className="absolute inset-0 w-full h-full" />
               )}
               <LazyLoadImage
                 src={banner.src}
                 alt={banner.alt}
                 width={banner.width}
                 height={banner.height}
-                className="w-full object-cover rounded-xl aspect-[2000/734]"
+                className="w-full h-full object-cover rounded-xl"
                 afterLoad={() => handleImageLoad(banner.id)}
                 loading={banner.id === 1 ? "eager" : "lazy"}
                 fetchPriority={banner.id === 1 ? "high" : "auto"}
+                wrapperClassName="!block !w-full !h-full"
               />
             </div>
           </SwiperSlide>
