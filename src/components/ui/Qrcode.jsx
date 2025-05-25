@@ -11,6 +11,7 @@ export default function Qrcode() {
   const { amount } = useParams();
   const [amountError, setAmountError] = useState("");
   const [validatedAmount, setValidatedAmount] = useState("");
+  const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,12 +34,16 @@ export default function Qrcode() {
   };
 
   const handleCancel = () => {
+    setShowCancelConfirm(true);
+  };
+
+  const confirmCancel = () => {
     navigate("/wallet");
   };
 
   if (amountError || !validatedAmount) {
     return (
-      <div className=" bg-gray-100 flex items-center justify-center p-4">
+      <div className="bg-gray-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md w-full space-y-6 relative">
           <button
             onClick={handleBack}
@@ -103,7 +108,9 @@ export default function Qrcode() {
           </div>
 
           <Timer />
-          <p className="text-sm text-gray-500">Your payment will be processed automatically.</p>
+          <p className="text-sm text-gray-500">
+            Your payment will be processed automatically.
+          </p>
           <button
             onClick={handleCancel}
             className="w-full bg-gray-600 text-white mt-3 font-semibold py-3 rounded-lg hover:bg-gray-700 transition"
@@ -113,10 +120,37 @@ export default function Qrcode() {
         </div>
 
         <p className="text-center text-xs text-gray-500 mt-4">
-          Powered by{" "}
-          <span className="font-semibold text-blue-600">Razorpay</span>
+          Powered by <span className="font-semibold text-blue-600">Razorpay</span>
         </p>
       </div>
+
+      {/* Cancel Confirmation Popup */}
+      {showCancelConfirm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+            <h3 className="text-lg font-semibold text-gray-800 mb-3">
+              Cancel Payment?
+            </h3>
+            <p className="text-gray-600 mb-4">
+              Are you sure you want to cancel this payment?
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowCancelConfirm(false)}
+                className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition"
+              >
+                No, Continue
+              </button>
+              <button
+                onClick={confirmCancel}
+                className="flex-1 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
+              >
+                Yes, Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PayInfo from "./PayInfo";
+import { Loader2 } from "lucide-react";
 
 export default function PaymentForm() {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("50");
   const [errors, setErrors] = useState({ name: "", amount: "" });
   const [isLoading, setIsLoading] = useState(false);
+  const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const navigate = useNavigate();
 
   const handleAmountChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
       setAmount(value);
-      setErrors((prev) => ({ ...prev, amount: "" })); // Clear amount error on valid input
+      setErrors((prev) => ({ ...prev, amount: "" }));
     }
   };
 
@@ -22,7 +24,7 @@ export default function PaymentForm() {
     setErrors((prev) => ({ ...prev, amount: "" }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = { name: "", amount: "" };
     let valid = true;
@@ -42,17 +44,18 @@ export default function PaymentForm() {
 
     if (valid) {
       setIsLoading(true);
-      // Redirect to /user/payprocess/:amount
+      // Simulate loading delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
       navigate(`/pay/${amount}`);
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="p-4 ">
+    <div className="p-4">
       <form
         onSubmit={handleSubmit}
-        className="bg-green-50 rounded-xl p-6  space-y-4 mx-auto"
+        className="bg-green-50 rounded-xl p-6 space-y-4 mx-auto"
       >
         <div>
           <label className="block font-semibold mb-1">Name</label>
@@ -61,17 +64,14 @@ export default function PaymentForm() {
             value={name}
             onChange={(e) => {
               setName(e.target.value);
-              setErrors((prev) => ({ ...prev, name: "" })); // Clear name error on input
+              setErrors((prev) => ({ ...prev, name: "" }));
             }}
             className="w-full p-2 rounded-md bg-green-100 text-black focus:outline-none disabled:opacity-50"
             placeholder="Enter your name"
             disabled={isLoading}
           />
           {errors.name && (
-            <p
-              className="text-red-500  p-3 rounded-md text-sm"
-              aria-live="polite"
-            >
+            <p className="text-red-500 p-3 rounded-md text-sm" aria-live="polite">
               {errors.name}
             </p>
           )}
@@ -91,16 +91,12 @@ export default function PaymentForm() {
             />
           </div>
           {errors.amount && (
-            <p
-              className="text-red-500  p-3 rounded-md  text-sm"
-              aria-live="polite"
-            >
+            <p className="text-red-500 p-3 rounded-md text-sm" aria-live="polite">
               {errors.amount}
             </p>
           )}
         </div>
 
-        {/* Suggested Amounts */}
         <div className="flex justify-center gap-4">
           {[50, 75, 100, 250].map((suggestedAmount) => (
             <button
@@ -117,12 +113,19 @@ export default function PaymentForm() {
 
         <button
           type="submit"
-          className={`w-full bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 transition ${
+          className={`w-full bg-green-500 text-white font-semibold py-2 rounded-md hover:bg-green-600 transition flex items-center justify-center ${
             isLoading ? "opacity-70 cursor-not-allowed" : ""
           }`}
           disabled={isLoading}
         >
-          {isLoading ? "Submitting..." : "Proceed to Pay"}
+          {isLoading ? (
+            <>
+              <Loader2 className="w-5 h-5 animate-spin mr-2" />
+              Processing...
+            </>
+          ) : (
+            "Proceed to Pay"
+          )}
         </button>
         <PayInfo />
       </form>
