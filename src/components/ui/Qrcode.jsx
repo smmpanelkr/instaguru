@@ -1,33 +1,38 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Loader2 } from "lucide-react";
 import RazorpayLogo from "./Razorpaylogo";
 import Timer from "./Timer";
 
 const UPI_ID = "insta999guru@ibl";
 
 export default function Qrcode() {
-  const { amount } = useParams();
+  const { token } = useParams();
   const [amountError, setAmountError] = useState("");
-  const [validatedAmount, setValidatedAmount] = useState("");
+  const [amount, setAmount] = useState("");
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
+  const [isCancelling, setIsCancelling] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (amount && /^\d+$/.test(amount)) {
-      const parsedAmount = parseInt(amount, 10);
-      if (parsedAmount >= 50) {
-        setValidatedAmount(amount);
+    try {
+      // Decode and validate token
+      const decodedToken = atob(token);
+      const [encodedAmount] = decodedToken.split('-');
+      const parsedAmount = parseInt(encodedAmount, 10);
+      
+      if (parsedAmount && parsedAmount >= 50) {
+        setAmount(parsedAmount.toString());
       } else {
-        setAmountError("Amount must be at least ₹50");
+        setAmountError("Invalid payment amount");
+        setTimeout(() => navigate("/addfund"), 2000);
       }
-    } else {
-      setAmountError("Invalid or missing amount in URL");
+    } catch {
+      setAmountError("Invalid payment token");
+      setTimeout(() => navigate("/addfund"), 2000);
     }
-  }, [amount]);
-
-  const paymentLink = `upi://pay?pa=${UPI_ID}&pn=Instawala&am=${validatedAmount}&cu=INR&tn=ORD4575224455`;
+  }, [token, navigate]);
 
   const handleBack = () => {
     navigate("/addfund");
@@ -37,11 +42,13 @@ export default function Qrcode() {
     setShowCancelConfirm(true);
   };
 
-  const confirmCancel = () => {
+  const confirmCancel = async () => {
+    setIsCancelling(true);
+    await new Promise(resolve => setTimeout(resolve, 2000));
     navigate("/wallet");
   };
 
-  if (amountError || !validatedAmount) {
+  if (amountError || !amount) {
     return (
       <div className="bg-gray-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md w-full space-y-6 relative">
@@ -69,6 +76,8 @@ export default function Qrcode() {
     );
   }
 
+  const paymentLink = `upi://pay?pa=${UPI_ID}&pn=Instawala&am=${amount}&cu=INR&tn=ORD4575224455`;
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md w-full space-y-6 relative">
@@ -86,7 +95,7 @@ export default function Qrcode() {
 
         <div className="text-center">
           <h2 className="text-lg font-semibold text-gray-800">
-            Scan to Pay ₹{validatedAmount}
+            Scan to Pay ₹{amount}
           </h2>
           <p className="text-sm text-gray-500 mb-4">
             Use any UPI app to scan and pay
@@ -148,9 +157,17 @@ export default function Qrcode() {
               </button>
               <button
                 onClick={confirmCancel}
-                className="flex-1 bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition font-medium"
+                disabled={isCancelling}
+                className="flex-1 bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition font-medium flex items-center justify-center"
               >
-                Yes, Cancel
+                {isCancelling ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    Cancelling...
+                  </>
+                ) : (
+                  "Yes, Cancel"
+                )}
               </button>
             </div>
           </div>

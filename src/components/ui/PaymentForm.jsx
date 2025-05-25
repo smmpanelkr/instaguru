@@ -23,6 +23,13 @@ export default function PaymentForm() {
     setErrors((prev) => ({ ...prev, amount: "" }));
   };
 
+  const generatePaymentToken = (amount) => {
+    // Simple token generation - in production use a more secure method
+    const timestamp = Date.now();
+    const randomStr = Math.random().toString(36).substring(7);
+    return btoa(`${amount}-${timestamp}-${randomStr}`);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = { name: "", amount: "" };
@@ -43,9 +50,9 @@ export default function PaymentForm() {
 
     if (valid) {
       setIsLoading(true);
-      // Simulate loading delay
+      const paymentToken = generatePaymentToken(amount);
       await new Promise(resolve => setTimeout(resolve, 1500));
-      navigate(`/pay/${amount}`);
+      navigate(`/payment/${paymentToken}`);
       setIsLoading(false);
     }
   };
