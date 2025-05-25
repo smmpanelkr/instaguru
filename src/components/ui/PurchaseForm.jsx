@@ -9,7 +9,7 @@ const PurchaseForm = ({
   onSubmit,
 }) => {
   const variant = COLOR_VARIANTS[color] || COLOR_VARIANTS.red;
-  const [profileLink, setProfileLink] = useState("");
+  const [input, setInput] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
   if (
@@ -34,20 +34,34 @@ const PurchaseForm = ({
     placeholder: config.placeholder,
   };
 
+  const validateInput = (value) => {
+    // Check if it's a valid email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailRegex.test(value)) return true;
+    
+    // Check if it's a valid URL
+    try {
+      new URL(value);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (profileLink) {
+    if (input && validateInput(input)) {
       const hasSufficientBalance = false; // Replace with actual balance check logic
       if (!hasSufficientBalance) {
-        setShowPopup(true); // Show popup on every submit if balance is insufficient
+        setShowPopup(true);
       } else if (onSubmit) {
-        onSubmit(profileLink);
+        onSubmit(input);
       }
     }
   };
 
   const handleClosePopup = () => {
-    setShowPopup(false); // Close popup
+    setShowPopup(false);
   };
 
   return (
@@ -57,7 +71,7 @@ const PurchaseForm = ({
         className={`flex flex-col gap-4 p-4 rounded-lg ${variant.cardBg} max-w-full w-full mx-auto my-4 box-border sm:p-6`}
       >
         <label
-          htmlFor="profileLink"
+          htmlFor="profileInput"
           className="text-gray-800 font-semibold flex items-center gap-2"
         >
           <img
@@ -68,11 +82,11 @@ const PurchaseForm = ({
           {filterConfig.label}
         </label>
         <input
-          id="profileLink"
-          type="url"
+          id="profileInput"
+          type="text"
           placeholder={filterConfig.placeholder}
-          value={profileLink}
-          onChange={(e) => setProfileLink(e.target.value)}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           required
           className={`px-3 py-2 rounded border-[1.5px] ${variant.borderColor} focus:outline-none w-full box-border`}
         />

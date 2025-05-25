@@ -57,16 +57,16 @@ export default function PaymentForm() {
         className="bg-green-50 rounded-xl p-6 space-y-4 mx-auto"
       >
         <div>
-          <label className="block font-semibold mb-1">Email</label>
+          <label className="block font-semibold mb-1">Name</label>
           <input
-            type="email"
+            type="text"
             value={name}
             onChange={(e) => {
               setName(e.target.value);
               setErrors((prev) => ({ ...prev, name: "" }));
             }}
             className="w-full p-2 rounded-md bg-green-100 text-black focus:outline-none disabled:opacity-50"
-            placeholder="Enter your email"
+            placeholder="Enter your name"
             disabled={isLoading}
           />
           {errors.name && (
