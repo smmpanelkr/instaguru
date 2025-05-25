@@ -3,6 +3,7 @@ import AutoSlider from "../components/AutoSlider";
 import ItemCard from "../components/ui/ItemCard";
 import channels from "../data/categories.json"; // Import the JSON data
 import WelcomePopup from "../components/ui/WelcomePopup"; // Import the WelcomePopup component
+import Footer from "../components/ui/Footer"; // Import the Footer component
 
 const Home = () => {
   return (
@@ -20,11 +21,7 @@ const Home = () => {
       {channels.map((channel, index) => (
         <ItemCard key={index} {...channel} />
       ))}
-      <div className="my-5">
-        <p className="text-center text-sm text-gray-500">
-          &copy; 2025 All rights reserved.
-        </p>
-      </div>
+      <Footer />
     </>
   );
 };

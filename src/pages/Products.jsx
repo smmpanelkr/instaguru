@@ -6,6 +6,7 @@ import PackCard from "../components/ui/PackCard";
 import PackFilter from "../components/ui/PackFilter";
 import Suggestion from "../components/ui/Suggestion";
 import data from "../data/categories.json";
+import Footer from "../components/ui/Footer";
 
 const Products = () => {
   const { slug } = useParams();
@@ -89,6 +90,7 @@ const Products = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

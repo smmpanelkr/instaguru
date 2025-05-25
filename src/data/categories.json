@@ -4,7 +4,7 @@
     "name": "Instagram",
     "description": "Followers, likes, and more.",
     "color": "pink",
-    "logo": "/ic/insta.jpeg",
+    "logo": "/ic/insta.webp",
     "label": "Enter Your Instagram Profile Link",
     "placeholder": "https://instagram.com/yourprofile",
     "filters": {
