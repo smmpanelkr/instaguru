@@ -18,7 +18,7 @@ const Header = () => {
             <img
               src="/ic/instawalla-logo.svg"
               alt="InstaWala Logo"
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
           </Link>
         </div>
@@ -47,7 +47,7 @@ const Header = () => {
         <img
           src="/ic/instawalla-logo.svg"
           alt="InstaWala Logo"
-          className="mx-6 mb-4 h-10 w-auto"
+          className="mx-6 mb-4 h-8 w-auto"
         />
         <ul className="list-none p-0 m-0">
           <li>

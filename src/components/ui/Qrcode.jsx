@@ -38,7 +38,7 @@ export default function Qrcode() {
 
   if (amountError || !validatedAmount) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className=" bg-gray-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl p-8 shadow-lg max-w-md w-full space-y-6 relative">
           <button
             onClick={handleBack}

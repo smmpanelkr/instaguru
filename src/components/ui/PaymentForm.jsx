@@ -4,7 +4,7 @@ import PayInfo from "./PayInfo";
 
 export default function PaymentForm() {
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState("50");
   const [errors, setErrors] = useState({ name: "", amount: "" });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
