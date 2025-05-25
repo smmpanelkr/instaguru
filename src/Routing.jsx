@@ -4,7 +4,7 @@ import About from "./pages/About";
 import Purchase from "./pages/Purchase";
 import Contact from "./pages/Contact";
 import Products from "./pages/Products";
-import ScrollToTop from "./components/ui/ScrollToTop"; // make sure the path is correct
+import ScrollToTop from "./components/ui/ScrollToTop";
 import AddFunds from "./pages/AddFunds";
 import Payment from "./pages/Payment";
 import Wallet from "./pages/Wallet";
@@ -22,7 +22,7 @@ const Routing = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/:slug" element={<Products />} />
         <Route path="/addfund" element={<AddFunds />} />
-        <Route path="/pay/:amount" element={<Payment />} />
+        <Route path="/payment/:token" element={<Payment />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/refer/:referralId" element={<ReferPage />} />
       </Routes>
