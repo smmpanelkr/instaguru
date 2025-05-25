@@ -8,7 +8,6 @@ export default function PaymentForm() {
   const [amount, setAmount] = useState("50");
   const [errors, setErrors] = useState({ name: "", amount: "" });
   const [isLoading, setIsLoading] = useState(false);
-  const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const navigate = useNavigate();
 
   const handleAmountChange = (e) => {
@@ -58,16 +57,16 @@ export default function PaymentForm() {
         className="bg-green-50 rounded-xl p-6 space-y-4 mx-auto"
       >
         <div>
-          <label className="block font-semibold mb-1">Name</label>
+          <label className="block font-semibold mb-1">Email</label>
           <input
-            type="text"
+            type="email"
             value={name}
             onChange={(e) => {
               setName(e.target.value);
               setErrors((prev) => ({ ...prev, name: "" }));
             }}
             className="w-full p-2 rounded-md bg-green-100 text-black focus:outline-none disabled:opacity-50"
-            placeholder="Enter your name"
+            placeholder="Enter your email"
             disabled={isLoading}
           />
           {errors.name && (

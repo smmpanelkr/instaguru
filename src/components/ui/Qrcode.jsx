@@ -124,10 +124,15 @@ export default function Qrcode() {
         </p>
       </div>
 
-      {/* Cancel Confirmation Popup */}
+      {/* Bottom Sheet Cancel Confirmation */}
       {showCancelConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
+          <div 
+            className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl p-6 transform transition-transform duration-300 ease-out"
+            style={{
+              transform: showCancelConfirm ? 'translateY(0)' : 'translateY(100%)'
+            }}
+          >
             <h3 className="text-lg font-semibold text-gray-800 mb-3">
               Cancel Payment?
             </h3>
@@ -137,13 +142,13 @@ export default function Qrcode() {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowCancelConfirm(false)}
-                className="flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition"
+                className="flex-1 bg-gray-200 text-gray-800 py-3 rounded-lg hover:bg-gray-300 transition font-medium"
               >
                 No, Continue
               </button>
               <button
                 onClick={confirmCancel}
-                className="flex-1 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
+                className="flex-1 bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition font-medium"
               >
                 Yes, Cancel
               </button>
