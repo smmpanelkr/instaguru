@@ -2,7 +2,7 @@
   {
     "slug": "instagram",
     "name": "Instagram",
-    "description": "Explore photos and videos.",
+    "description": "Followers, likes, and more.",
     "color": "pink",
     "logo": "/ic/insta.jpeg",
     "label": "Enter Your Instagram Profile Link",
@@ -23,34 +23,129 @@
       "Views": {
         "label": "Enter Your Instagram Story/Post Link",
         "placeholder": "https://instagram.com/stories/yourprofile"
+      },
+      "Bluetick": {
+        "label": "Enter Your Instagram Profile Link",
+        "placeholder": "https://instagram.com/yourprofile"
       }
     },
     "packs": [
       {
-        "id": 114,
-        "title": "Instagram Followers Growth",
+        "id": 1000,
+        "title": "Lifetime Blue Tick",
+        "price": 399,
+        "description": "Parmanent verification for your profile.",
+        "filter": "Bluetick"
+      },
+      {
+        "id": 1001,
+        "title": "1000 Followers",
         "price": 59,
-        "description": "Grow your follower base organically.",
+        "description": "Indian Real Non-drop Followers",
         "filter": "Followers"
       },
       {
-        "id": 115,
-        "title": "Instagram Likes Booster",
+        "id": 1002,
+        "title": "2000 Followers",
+        "price": 89,
+        "description": "Indian Real Non-drop Followers",
+        "filter": "Followers"
+      },
+      {
+        "id": 1003,
+        "title": "5000 Followers",
+        "price": 149,
+        "description": "Indian Real Non-drop Followers",
+        "filter": "Followers"
+      },
+      {
+        "id": 1004,
+        "title": "10000 Followers",
+        "price": 249,
+        "description": "Indian Real Non-drop Followers",
+        "filter": "Followers"
+      },
+      {
+        "id": 1005,
+        "title": "1000 Likes",
         "price": 25,
-        "description": "Increase likes on your photos and videos.",
+        "description": "Indian Real Non-drop Likes",
         "filter": "Likes"
       },
       {
-        "id": 116,
-        "title": "Instagram Comments Plan",
+        "id": 1006,
+        "title": "2000 Likes",
+        "price": 39,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1007,
+        "title": "5000 Likes",
+        "price": 69,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1008,
+        "title": "10000 Likes",
+        "price": 99,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1009,
+        "title": "100 Comments",
         "price": 35,
-        "description": "Get more comments to boost engagement.",
+        "description": "Indian Girls & Boys Mixed.",
         "filter": "Comments"
       },
       {
-        "id": 117,
-        "title": "Instagram Story Views",
-        "price": 19,
+        "id": 1010,
+        "title": "200 Comments",
+        "price": 65,
+        "description": "Indian Girls & Boys Mixed.",
+        "filter": "Comments"
+      },
+      {
+        "id": 1011,
+        "title": "500 Comments",
+        "price": 150,
+        "description": "Indian Girls & Boys Mixed.",
+        "filter": "Comments"
+      },
+      {
+        "id": 1012,
+        "title": "1000 Comments",
+        "price": 280,
+        "description": "Indian Girls & Boys Mixed.",
+        "filter": "Comments"
+      },
+      {
+        "id": 1013,
+        "title": "1000 Story Views",
+        "price": 11,
+        "description": "Boost views on your Instagram stories.",
+        "filter": "Views"
+      },
+      {
+        "id": 1014,
+        "title": "2000 Story Views",
+        "price": 20,
+        "description": "Boost views on your Instagram stories.",
+        "filter": "Views"
+      },
+      {
+        "id": 1015,
+        "title": "5000 Story Views",
+        "price": 45,
+        "description": "Boost views on your Instagram stories.",
+        "filter": "Views"
+      },
+      {
+        "id": 1016,
+        "title": "10000 Story Views",
+        "price": 85,
         "description": "Boost views on your Instagram stories.",
         "filter": "Views"
       }
@@ -65,10 +160,6 @@
     "label": "Enter Your YouTube Channel Link",
     "placeholder": "https://youtube.com/@yourchannel",
     "filters": {
-      "Followers": {
-        "label": "Enter Your YouTube Channel Link",
-        "placeholder": "https://youtube.com/@yourchannel"
-      },
       "Views": {
         "label": "Enter Your YouTube Video Link",
         "placeholder": "https://youtube.com/watch?v=yourvideo"
@@ -80,35 +171,155 @@
       "Comments": {
         "label": "Enter Your YouTube Video Link",
         "placeholder": "https://youtube.com/watch?v=yourvideo"
+      },
+      "Subscribers": {
+        "label": "Enter Your YouTube Channel Link",
+        "placeholder": "https://youtube.com/@yourchannel"
+      },
+      "Watchtime": {
+        "label": "Enter Your YouTube Channel Link",
+        "placeholder": "https://youtube.com/@yourchannel"
       }
     },
     "packs": [
       {
-        "id": 100,
-        "title": "YouTube Subscribers Boost",
-        "price": 99,
-        "description": "Increase your channel subscribers quickly.",
-        "filter": "Followers"
+        "id": 2000,
+        "title": "4000 Hours Watchtime",
+        "price": 499,
+        "description": "Youtube monetization special.",
+        "filter": "Watchtime"
       },
       {
-        "id": 101,
-        "title": "YouTube Views Package",
-        "price": 49,
-        "description": "Boost views on your videos for better reach.",
+        "id": 1017,
+        "title": "1000 Subscribers",
+        "price": 59,
+        "description": "Indian Real Non-drop Subscribers",
+        "filter": "Subscribers"
+      },
+      {
+        "id": 1018,
+        "title": "2000 Subscribers",
+        "price": 89,
+        "description": "Indian Real Non-drop Subscribers",
+        "filter": "Subscribers"
+      },
+      {
+        "id": 1019,
+        "title": "5000 Subscribers",
+        "price": 149,
+        "description": "Indian Real Non-drop Subscribers",
+        "filter": "Subscribers"
+      },
+      {
+        "id": 1020,
+        "title": "10000 Subscribers",
+        "price": 249,
+        "description": "Indian Real Non-drop Subscribers",
+        "filter": "Subscribers"
+      },
+      {
+        "id": 1021,
+        "title": "1000 Views",
+        "price": 25,
+        "description": "Boost views on your YouTube videos.",
         "filter": "Views"
       },
       {
-        "id": 102,
-        "title": "YouTube Likes Plan",
-        "price": 29,
-        "description": "Get more likes on your videos.",
+        "id": 1022,
+        "title": "2000 Views",
+        "price": 39,
+        "description": "Boost views on your YouTube videos.",
+        "filter": "Views"
+      },
+      {
+        "id": 1023,
+        "title": "5000 Views",
+        "price": 69,
+        "description": "Boost views on your YouTube videos.",
+        "filter": "Views"
+      },
+      {
+        "id": 1024,
+        "title": "10000 Views",
+        "price": 99,
+        "description": "Boost views on your YouTube videos.",
+        "filter": "Views"
+      },
+      {
+        "id": 2001,
+        "title": "50000 Views",
+        "price": 199,
+        "description": "Boost views on your YouTube videos.",
+        "filter": "Views"
+      },
+      {
+        "id": 2002,
+        "title": "100000 Views",
+        "price": 299,
+        "description": "Boost views on your YouTube videos.",
+        "filter": "Views"
+      },
+      {
+        "id": 2003,
+        "title": "10 Million Views",
+        "price": 499,
+        "description": "Shorts Monetization special.",
+        "filter": "Views"
+      },
+      {
+        "id": 1025,
+        "title": "100 Likes",
+        "price": 15,
+        "description": "Indian Real Non-drop Likes",
         "filter": "Likes"
       },
       {
-        "id": 103,
-        "title": "YouTube Comments Boost",
-        "price": 39,
-        "description": "Increase comments to enhance engagement.",
+        "id": 1026,
+        "title": "200 Likes",
+        "price": 25,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1027,
+        "title": "500 Likes",
+        "price": 49,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1028,
+        "title": "1000 Likes",
+        "price": 89,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1029,
+        "title": "100 Comments",
+        "price": 35,
+        "description": "Indian Real Comments",
+        "filter": "Comments"
+      },
+      {
+        "id": 1030,
+        "title": "200 Comments",
+        "price": 65,
+        "description": "Indian Real Comments",
+        "filter": "Comments"
+      },
+      {
+        "id": 1031,
+        "title": "500 Comments",
+        "price": 150,
+        "description": "Indian Real Comments",
+        "filter": "Comments"
+      },
+      {
+        "id": 1032,
+        "title": "1000 Comments",
+        "price": 280,
+        "description": "Indian Real Comments",
         "filter": "Comments"
       }
     ]
@@ -141,31 +352,115 @@
     },
     "packs": [
       {
-        "id": 110,
-        "title": "Facebook Followers Boost",
+        "id": 1033,
+        "title": "1000 Followers",
         "price": 49,
-        "description": "Increase your page followers quickly.",
+        "description": "Indian Real Non-drop Followers",
         "filter": "Followers"
       },
       {
-        "id": 111,
-        "title": "Facebook Likes Package",
-        "price": 29,
-        "description": "Boost likes on your posts for better engagement.",
+        "id": 1034,
+        "title": "2000 Followers",
+        "price": 79,
+        "description": "Indian Real Non-drop Followers",
+        "filter": "Followers"
+      },
+      {
+        "id": 1035,
+        "title": "5000 Followers",
+        "price": 129,
+        "description": "Indian Real Non-drop Followers",
+        "filter": "Followers"
+      },
+      {
+        "id": 1036,
+        "title": "10000 Followers",
+        "price": 199,
+        "description": "Indian Real Non-drop Followers",
+        "filter": "Followers"
+      },
+      {
+        "id": 1037,
+        "title": "1000 Likes",
+        "price": 19,
+        "description": "Indian Real Non-drop Likes",
         "filter": "Likes"
       },
       {
-        "id": 112,
-        "title": "Facebook Comments Plan",
-        "price": 39,
-        "description": "Get more comments to enhance interaction.",
+        "id": 1038,
+        "title": "2000 Likes",
+        "price": 35,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1039,
+        "title": "5000 Likes",
+        "price": 59,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1040,
+        "title": "10000 Likes",
+        "price": 89,
+        "description": "Indian Real Non-drop Likes",
+        "filter": "Likes"
+      },
+      {
+        "id": 1041,
+        "title": "100 Comments",
+        "price": 29,
+        "description": "Indian Real Comments",
         "filter": "Comments"
       },
       {
-        "id": 113,
-        "title": "Facebook Views Boost",
-        "price": 19,
-        "description": "Increase views on your videos and posts.",
+        "id": 1042,
+        "title": "200 Comments",
+        "price": 55,
+        "description": "Indian Real Comments",
+        "filter": "Comments"
+      },
+      {
+        "id": 1043,
+        "title": "500 Comments",
+        "price": 120,
+        "description": "Indian Real Comments",
+        "filter": "Comments"
+      },
+      {
+        "id": 1044,
+        "title": "1000 Comments",
+        "price": 220,
+        "description": "Indian Real Comments",
+        "filter": "Comments"
+      },
+      {
+        "id": 1045,
+        "title": "1000 Views",
+        "price": 15,
+        "description": "Boost views on your Facebook videos or posts.",
+        "filter": "Views"
+      },
+      {
+        "id": 1046,
+        "title": "2000 Views",
+        "price": 25,
+        "description": "Boost views on your Facebook videos or posts.",
+        "filter": "Views"
+      },
+      {
+        "id": 1047,
+        "title": "5000 Views",
+        "price": 45,
+        "description": "Boost views on your Facebook videos or posts.",
+        "filter": "Views"
+      },
+      {
+        "id": 1048,
+        "title": "10000 Views",
+        "price": 75,
+        "description": "Boost views on your Facebook videos or posts.",
         "filter": "Views"
       }
     ]
@@ -176,28 +471,56 @@
     "description": "Watch your favorite",
     "color": "red",
     "logo": "/ic/netflix.svg",
-    "label": "Enter Your Netflix Profile Link",
-    "placeholder": "https://netflix.com/yourprofile",
+    "label": "Enter Your Email for Netflix Subscription",
+    "placeholder": "email@example.com",
     "filters": {
-      "Views": {
-        "label": "Enter Your Netflix Content Link",
-        "placeholder": "https://netflix.com/watch/yourcontent"
+      "Subscription": {
+        "label": "Enter Your Email for Netflix Subscription",
+        "placeholder": "email@example.com"
       }
     },
     "packs": [
       {
-        "id": 106,
-        "title": "Netflix Profile Views",
-        "price": 99,
-        "description": "Boost visibility for shared profiles.",
-        "filter": "Views"
+        "id": 3000,
+        "title": "Netflix 1 Month HD",
+        "price": 112,
+        "description": "Access Netflix in HD for 1 month.",
+        "filter": "Subscription"
       },
       {
-        "id": 107,
-        "title": "Netflix Watch Hours",
-        "price": 149,
-        "description": "Increase watch hours for trending content.",
-        "filter": "Views"
+        "id": 3001,
+        "title": "Netflix 1 Month Standard",
+        "price": 84,
+        "description": "Access Netflix in standard quality for 1 month.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 3002,
+        "title": "Netflix 3 Months HD",
+        "price": 309,
+        "description": "Access Netflix in HD for 3 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 3003,
+        "title": "Netflix 3 Months Standard",
+        "price": 224,
+        "description": "Access Netflix in standard quality for 3 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 3004,
+        "title": "Netflix 6 Months HD",
+        "price": 562,
+        "description": "Access Netflix in HD for 6 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 3005,
+        "title": "Netflix 6 Months Standard",
+        "price": 421,
+        "description": "Access Netflix in standard quality for 6 months.",
+        "filter": "Subscription"
       }
     ]
   },
@@ -207,32 +530,42 @@
     "description": "Shop and stream.",
     "color": "blue",
     "logo": "/ic/prime.png",
-    "label": "Enter Your Amazon Prime Channel Link",
-    "placeholder": "https://amazon.com/prime/yourchannel",
+    "label": "Enter Your Email for Amazon Prime Subscription",
+    "placeholder": "email@example.com",
     "filters": {
-      "Followers": {
-        "label": "Enter Your Amazon Prime Channel Link",
-        "placeholder": "https://amazon.com/prime/yourchannel"
-      },
-      "Views": {
-        "label": "Enter Your Amazon Prime Video Link",
-        "placeholder": "https://amazon.com/prime/watch/yourvideo"
+      "Subscription": {
+        "label": "Enter Your Email for Amazon Prime Subscription",
+        "placeholder": "email@example.com"
       }
     },
     "packs": [
       {
-        "id": 118,
-        "title": "Amazon Prime Video Views",
-        "price": 99,
-        "description": "Increase views on Prime Video content.",
-        "filter": "Views"
+        "id": 4000,
+        "title": "Amazon Prime 1 Month",
+        "price": 79,
+        "description": "Access Amazon Prime benefits for 1 month.",
+        "filter": "Subscription"
       },
       {
-        "id": 119,
-        "title": "Amazon Prime Channel Followers",
-        "price": 129,
-        "description": "Boost followers for Prime channels.",
-        "filter": "Followers"
+        "id": 4001,
+        "title": "Amazon Prime 3 Months",
+        "price": 109,
+        "description": "Access Amazon Prime benefits for 3 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 4002,
+        "title": "Amazon Prime 6 Months",
+        "price": 149,
+        "description": "Access Amazon Prime benefits for 6 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 4003,
+        "title": "Amazon Prime 12 Months",
+        "price": 399,
+        "description": "Access Amazon Prime benefits for 12 months.",
+        "filter": "Subscription"
       }
     ]
   },
@@ -242,46 +575,56 @@
     "description": "Listen to music and podcasts.",
     "color": "green",
     "logo": "/ic/spotify.png",
-    "label": "Enter Your Spotify Profile Link",
-    "placeholder": "https://spotify.com/user/yourprofile",
+    "label": "Enter Your Email for Spotify Subscription",
+    "placeholder": "email@example.com",
     "filters": {
-      "Followers": {
-        "label": "Enter Your Spotify Playlist Link",
-        "placeholder": "https://spotify.com/playlist/yourplaylist"
-      },
-      "Views": {
-        "label": "Enter Your Spotify Track/Podcast Link",
-        "placeholder": "https://spotify.com/track/yourtrack"
+      "Subscription": {
+        "label": "Enter Your Email for Spotify Subscription",
+        "placeholder": "email@example.com"
       }
     },
     "packs": [
       {
-        "id": 104,
-        "title": "Spotify Playlist Followers",
-        "price": 59,
-        "description": "Boost followers for your playlists.",
-        "filter": "Followers"
+        "id": 4020,
+        "title": "Spotify 1 Month Premium",
+        "price": 21,
+        "description": "Access Spotify Premium for 1 month.",
+        "filter": "Subscription"
       },
       {
-        "id": 105,
-        "title": "Spotify Track Plays",
-        "price": 39,
-        "description": "Increase plays on your tracks or podcasts.",
-        "filter": "Views"
+        "id": 4021,
+        "title": "Spotify 3 Months Premium",
+        "price": 49,
+        "description": "Access Spotify Premium for 3 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 4022,
+        "title": "Spotify 6 Months Premium",
+        "price": 79,
+        "description": "Access Spotify Premium for 6 months.",
+        "filter": "Subscription"
+      },
+      {
+        "id": 4023,
+        "title": "Spotify 12 Months Premium",
+        "price": 109,
+        "description": "Access Spotify Premium for 12 months.",
+        "filter": "Subscription"
       }
     ]
   },
   {
     "slug": "telegram",
     "name": "Telegram",
-    "description": "Secure messaging app.",
+    "description": "Grow your Telegram presence with targeted services.",
     "color": "sky",
     "logo": "/ic/telegram.webp",
     "label": "Enter Your Telegram Group/Channel Link",
     "placeholder": "https://t.me/yourgroup",
     "filters": {
       "Followers": {
-        "label": "Enter Your Telegram Group/Channel Link",
+        "label": "Enter Your Telegram Group or Channel Link",
         "placeholder": "https://t.me/yourgroup"
       },
       "Views": {
@@ -291,17 +634,17 @@
     },
     "packs": [
       {
-        "id": 108,
+        "id": 1055,
         "title": "Telegram Group Members",
         "price": 79,
-        "description": "Add members to your Telegram groups or channels.",
+        "description": "Get high-retention members added to your Telegram groups or channels. Fast and reliable service.",
         "filter": "Followers"
       },
       {
-        "id": 109,
-        "title": "Telegram Message Views",
+        "id": 1056,
+        "title": "Telegram Post Views",
         "price": 29,
-        "description": "Increase views on your channel posts.",
+        "description": "Boost views on your Telegram posts to increase engagement and visibility.",
         "filter": "Views"
       }
     ]
