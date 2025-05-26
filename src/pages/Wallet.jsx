@@ -11,19 +11,29 @@ const Wallet = () => {
   }, 0);
 
   useEffect(() => {
-    // Existing transactions - replace or fetch from your source
-    const baseTransactions = [];
+    const baseTransactions = [
+      // {
+      //   id: "3",
+      //   type: "credit",
+      //   amount: 50,
+      //   description: "Added funds",
+      //   date: new Date().toISOString(),
+      // },
+    ];
 
-    // Try get welcome bonus transaction from localStorage
     const welcomeBonusTxn = localStorage.getItem("welcomeBonusTxn");
     const welcomeBonus = welcomeBonusTxn ? JSON.parse(welcomeBonusTxn) : null;
 
-    // Prepend welcome bonus if exists and not already in baseTransactions
     const allTxns = welcomeBonus
       ? [welcomeBonus, ...baseTransactions]
       : baseTransactions;
 
-    setTransactions(allTxns);
+    // 🔽 Sort transactions by latest date first
+    const sortedTxns = allTxns.sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+
+    setTransactions(sortedTxns);
   }, []);
 
   // New function for relative time formatting
@@ -70,69 +80,70 @@ const Wallet = () => {
 
   return (
     <>
-    <Header />
-    <div className="mt-20"></div>
-    <div className="p-4 w-full mx-auto">
-      <div className="bg-green-50 rounded-xl p-6 mb-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-xl font-bold text-green-700 mb-2">Wallet</h2>
-            <p className="text-3xl font-bold text-gray-800">
-              ₹{walletAmount.toFixed(2)}
-            </p>
+      <Header />
+      <div className="mt-20"></div>
+      <div className="p-4 w-full mx-auto">
+        <div className="bg-green-50 rounded-xl p-6 mb-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-bold text-green-700 mb-2">Wallet</h2>
+              <p className="text-3xl font-bold text-gray-800">
+                ₹{walletAmount.toFixed(2)}
+              </p>
+            </div>
+            <Link
+              to="/addfund"
+              className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition"
+            >
+              <PlusCircleIcon className="w-5 h-5" /> Add Funds
+            </Link>
           </div>
-          <Link
-            to="/addfund"
-            className="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition"
-          >
-            <PlusCircleIcon className="w-5 h-5" /> Add Funds
-          </Link>
+        </div>
+
+        <div className="bg-green-50 rounded-xl p-6">
+          <h3 className="text-lg font-semibold text-green-700 mb-4">
+            Transaction History
+          </h3>
+          <ul className="space-y-4">
+            {transactions.length === 0 ? (
+              <li className="text-gray-500">No transactions yet.</li>
+            ) : (
+              transactions.map((txn) => (
+                <li
+                  key={txn.id}
+                  className="flex items-center justify-between bg-green-100 rounded-lg p-4"
+                >
+                  <div className="flex items-center gap-3">
+                    <ArrowRightIcon
+                      className={`w-5 h-5 ${
+                        txn.type === "credit"
+                          ? "text-green-600 rotate-[135deg]"
+                          : "text-red-500 -rotate-45"
+                      }`}
+                    />
+                    <div>
+                      <p className="text-sm font-semibold text-gray-800">
+                        {txn.description}
+                      </p>
+                      <p className="text-xs text-gray-600">
+                        {formatRelativeTime(txn.date)}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className={`text-sm font-bold ${
+                      txn.type === "credit" ? "text-green-600" : "text-red-500"
+                    }`}
+                  >
+                    {txn.type === "credit" ? "+" : "-"}₹{txn.amount}
+                  </div>
+                </li>
+              ))
+            )}
+          </ul>
         </div>
       </div>
-
-      <div className="bg-green-50 rounded-xl p-6">
-        <h3 className="text-lg font-semibold text-green-700 mb-4">
-          Transaction History
-        </h3>
-        <ul className="space-y-4">
-          {transactions.length === 0 ? (
-            <li className="text-gray-500">No transactions yet.</li>
-          ) : (
-            transactions.map((txn) => (
-              <li
-                key={txn.id}
-                className="flex items-center justify-between bg-green-100 rounded-lg p-4"
-              >
-                <div className="flex items-center gap-3">
-                  <ArrowRightIcon
-                    className={`w-5 h-5 ${
-                      txn.type === "credit"
-                        ? "text-green-600 rotate-[135deg]"
-                        : "text-red-500 -rotate-45"
-                    }`}
-                  />
-                  <div>
-                    <p className="text-sm font-semibold text-gray-800">
-                      {txn.description}
-                    </p>
-                    <p className="text-xs text-gray-600">
-                      {formatRelativeTime(txn.date)}
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className={`text-sm font-bold ${
-                    txn.type === "credit" ? "text-green-600" : "text-red-500"
-                  }`}
-                >
-                  {txn.type === "credit" ? "+" : "-"}₹{txn.amount}
-                </div>
-              </li>
-            ))
-          )}
-        </ul>
-      </div>
-    </div></>
+    </>
   );
 };
 
