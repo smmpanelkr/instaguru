@@ -65,7 +65,7 @@ const Header = () => {
               className="flex items-center p-4 border-b border-gray-200 hover:bg-green-50 transition-colors duration-200 gap-3 text-gray-800 font-medium no-underline"
             >
               <FiCreditCard className="w-6 h-6 text-green-500" />
-              Wallet: ₹ 1.00
+              Wallet: ₹ 10.00
             </Link>
           </li>
           <li>

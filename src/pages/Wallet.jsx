@@ -12,13 +12,7 @@ const Wallet = () => {
 
   useEffect(() => {
     const baseTransactions = [
-      {
-        id: "3",
-        type: "credit",
-        amount: 50,
-        description: "Added funds",
-        date: new Date().toISOString(),
-      },
+    
     ];
 
     const welcomeBonusTxn = localStorage.getItem("welcomeBonusTxn");
