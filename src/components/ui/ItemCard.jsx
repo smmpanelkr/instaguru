@@ -16,7 +16,7 @@ const ItemCard = ({ logo, name, description, slug, color = "red" }) => {
       to={slug}
       className={`flex items-center ${variant.cardBg} m-4 h-20 rounded-lg p-4 transition hover:brightness-95 no-underline`}
     >
-      <div className="relative w-12 h-12">
+      <div className="relative flex-shrink-0 w-12 h-12">
         {!imageLoaded && !imgError && (
           <Skeleton className="absolute inset-0 rounded-full" />
         )}
@@ -35,13 +35,13 @@ const ItemCard = ({ logo, name, description, slug, color = "red" }) => {
         )}
       </div>
 
-      <div className="flex flex-col ml-4 max-w-[60%]">
-        <h3 className="text-sm font-semibold text-gray-800">{name}</h3>
+      <div className="flex flex-col ml-4 flex-grow min-w-0">
+        <h3 className="text-sm font-semibold text-gray-800 truncate">{name}</h3>
         <p className="text-xs text-gray-600 mt-1 truncate">{description}</p>
       </div>
 
       <div
-        className={`ml-auto text-white text-sm px-4 py-2 rounded-full flex items-center gap-1 ${variant.buttonBg} ${variant.buttonHover}`}
+        className={`ml-4 flex-shrink-0 text-white text-sm px-4 py-2 rounded-full flex items-center gap-1 ${variant.buttonBg} ${variant.buttonHover}`}
       >
         Plans
         <ArrowRightIcon className="w-4 h-4" />
