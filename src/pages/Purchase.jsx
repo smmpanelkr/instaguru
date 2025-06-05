@@ -64,7 +64,7 @@ const Purchase = () => {
         <div className="m-4 rounded-2xl overflow-hidden aspect-video">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/E9Q7m5cKx9Y"
+            src="https://www.youtube.com/embed/NyqkkX0-v60"
             title="How to Use"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
