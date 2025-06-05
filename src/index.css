@@ -7,6 +7,9 @@
   background: white !important;
   opacity: 0.6;
 }
+body{
+  background-color: #ffffff;
+}
 
 .swiper-pagination-bullet-active {
   opacity: 1;
