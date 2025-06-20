@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import { Mail, Smartphone, Clock } from "lucide-react";
+import SITE_CONFIG from "../config/siteConfig";
 
 const Contact = () => {
   return (
@@ -21,10 +22,10 @@ const Contact = () => {
             <div className="text-left text-sm">
               <p className="font-semibold text-gray-800">Email</p>
               <a
-                href="mailto:help@instaguru.in"
+                href={`mailto:${SITE_CONFIG.supportEmail}`}
                 className="text-green-600 hover:underline"
               >
-                help@instaguru.in
+                {SITE_CONFIG.supportEmail}
               </a>
             </div>
           </div>
@@ -46,12 +47,12 @@ const Contact = () => {
             <div className="text-left text-sm">
               <p className="font-semibold text-gray-800">WhatsApp</p>
               <a
-                href="https://wa.me/918210220189"
+                href={`https://wa.me/${SITE_CONFIG.whatsappNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-green-600 hover:underline"
               >
-                +91 82102 20189
+                {SITE_CONFIG.supportPhone}
               </a>
             </div>
           </div>

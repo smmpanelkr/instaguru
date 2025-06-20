@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import SITE_CONFIG from "../config/siteConfig";
 
 const Refer = () => {
   const { referralId } = useParams(); // Extract referral ID from URL (e.g., JW2-TLZ-0VT)
@@ -48,11 +49,7 @@ const Refer = () => {
   }, [referralId, navigate]);
 
   const referralLink = `${window.location.origin}/refer/${referralCode}`;
-  const shareMessage = `🔥 Get real followers, subscribers & OTT subscriptions at the lowest prices!
-
-🎁 Use my referral link to join Instaguru and get ₹10 bonus instantly! 🤑  
-👇 Click now and grab the deal:
-${referralLink}`;
+  const shareMessage = SITE_CONFIG.referralMessage(referralLink);
 
   const handleCopy = async () => {
     try {
@@ -93,7 +90,7 @@ ${referralLink}`;
           </h2>
           <p className="text-sm text-gray-700 mb-4 text-center">
             Share your referral link and earn{" "}
-            <span className="text-green-600 font-semibold">₹10</span>!
+            <span className="text-green-600 font-semibold">₹{SITE_CONFIG.referralBonus}</span>!
           </p>
 
           {/* Share Buttons */}
@@ -147,7 +144,7 @@ ${referralLink}`;
             <ul className="text-sm text-gray-600 list-disc list-inside space-y-2">
               <li>Share your referral link via Copy, WhatsApp, or SMS.</li>
               <li>Your friends join using your referral link.</li>
-              <li>Earn ₹10 for each friend who signs up successfully.</li>
+              <li>Earn ₹{SITE_CONFIG.referralBonus} for each friend who signs up successfully.</li>
               <li>Track your referrals above and watch your rewards grow!</li>
             </ul>
           </div>

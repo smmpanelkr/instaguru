@@ -2,10 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PayInfo from "./PayInfo";
 import { Loader2 } from "lucide-react";
+import SITE_CONFIG from "../../config/siteConfig";
 
 export default function PaymentForm() {
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState("50");
+  const [amount, setAmount] = useState(SITE_CONFIG.minimumAmount.toString());
   const [errors, setErrors] = useState({ name: "", amount: "" });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -41,8 +42,8 @@ export default function PaymentForm() {
     }
 
     const parsedAmount = parseInt(amount, 10);
-    if (!amount || parsedAmount < 50 || parsedAmount > 2500) {
-      newErrors.amount = "Amount must be between ₹50 and ₹2500";
+    if (!amount || parsedAmount < SITE_CONFIG.minimumAmount || parsedAmount > SITE_CONFIG.maximumAmount) {
+      newErrors.amount = `Amount must be between ₹${SITE_CONFIG.minimumAmount} and ₹${SITE_CONFIG.maximumAmount}`;
       valid = false;
     }
 
@@ -56,6 +57,14 @@ export default function PaymentForm() {
       setIsLoading(false);
     }
   };
+
+  // Suggested amounts based on minimum amount
+  const suggestedAmounts = [
+    SITE_CONFIG.minimumAmount,
+    SITE_CONFIG.minimumAmount + 25,
+    SITE_CONFIG.minimumAmount + 50,
+    SITE_CONFIG.minimumAmount + 200
+  ];
 
   return (
     <div className="p-4">
@@ -92,7 +101,7 @@ export default function PaymentForm() {
               value={amount}
               onChange={handleAmountChange}
               className="w-full p-2 bg-transparent text-black focus:outline-none disabled:opacity-50"
-              placeholder="Enter amount (50 - 2500)"
+              placeholder={`Enter amount (${SITE_CONFIG.minimumAmount} - ${SITE_CONFIG.maximumAmount})`}
               disabled={isLoading}
             />
           </div>
@@ -104,7 +113,7 @@ export default function PaymentForm() {
         </div>
 
         <div className="flex justify-center gap-4">
-          {[50, 75, 100, 250].map((suggestedAmount) => (
+          {suggestedAmounts.map((suggestedAmount) => (
             <button
               key={suggestedAmount}
               type="button"
