@@ -11,11 +11,6 @@ const SITE_CONFIG = {
   supportPhone: "+91 82102 20189",
   whatsappNumber: "918210220189", // Without + sign for WhatsApp links
   
-  // Payment Configuration
-  upiId: "insta999guru@ibl",
-  minimumAmount: 50,
-  maximumAmount: 2500,
-  
   // Analytics
   googleAnalyticsId: "G-C7CC3P7X8Z",
   

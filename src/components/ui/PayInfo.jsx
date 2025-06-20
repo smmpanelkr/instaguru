@@ -1,5 +1,5 @@
 import { Clock } from "lucide-react";
-import SITE_CONFIG from "../../config/siteConfig";
+import PAYMENT_CONFIG from "../../config/paymentConfig";
 
 const PayInfo = () => {
   return (
@@ -7,8 +7,8 @@ const PayInfo = () => {
       <h3>Instruction</h3>
       <ul className="list-decimal pl-5 space-y-2 mt-4 text-sm">
         <li>
-          Please enter an amount above ₹{SITE_CONFIG.minimumAmount} and then click "Pay Now".{" "}
-          <span className="text-green-600">(Min {SITE_CONFIG.minimumAmount}Rs)</span>
+          Please enter an amount above ₹{PAYMENT_CONFIG.minimumAmount} and then click "Pay Now".{" "}
+          <span className="text-green-600">(Min {PAYMENT_CONFIG.minimumAmount}Rs)</span>
         </li>
         <li>Scan QR Code and Pay</li>
         <li>
@@ -20,7 +20,7 @@ const PayInfo = () => {
       <div className="flex items-start gap-3 mt-4 bg-sky-50 text-green-800 border border-green-200 rounded-xl p-4">
         <Clock className="w-5 h-5 mt-1 text-green-500" />
         <div className="text-sm leading-relaxed">
-          Funds will be added automatically in <strong>1-4 minutes</strong>.
+          Funds will be added automatically in <strong>{PAYMENT_CONFIG.paymentGateway.processingTime}</strong>.
         </div>
       </div>
     </div>
